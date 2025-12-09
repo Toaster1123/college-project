@@ -1,0 +1,69 @@
+"use client";
+
+import { FC } from "react";
+import {
+  Select,
+  SelectTrigger,
+  SelectValue,
+  SelectContent,
+  SelectItem,
+  Label,
+  Spinner,
+} from "@/shared";
+import { PatientSearchFormValues } from "../model";
+import clsx from "clsx";
+
+interface Props {
+  label: string;
+  name: keyof PatientSearchFormValues;
+  value?: string;
+  onChange: (val: string) => void;
+  options: { value: string; label: string }[];
+
+  isLoading?: boolean;
+}
+
+export const PatientSearchSelect: FC<Props> = ({
+  label,
+  value = "",
+  onChange,
+  options,
+  isLoading = false,
+}) => {
+  return (
+    <div className="flex flex-col gap-1">
+      <Label>{label}</Label>
+
+      <div className="relative h-12">
+        <div
+          className={clsx(
+            "absolute inset-0 transition-opacity duration-300",
+            isLoading ? "opacity-0 pointer-events-none" : "opacity-100"
+          )}
+        >
+          <Select value={value} onValueChange={onChange}>
+            <SelectTrigger className="w-full">
+              <SelectValue placeholder={label} />
+            </SelectTrigger>
+            <SelectContent>
+              {options.map((opt) => (
+                <SelectItem key={opt.value} value={opt.value}>
+                  {opt.label}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
+
+        <div
+          className={clsx(
+            "absolute inset-0 flex items-center justify-center transition-opacity duration-300",
+            isLoading ? "opacity-100" : "opacity-0 pointer-events-none"
+          )}
+        >
+          <Spinner />
+        </div>
+      </div>
+    </div>
+  );
+};

@@ -7,11 +7,11 @@ import { pb } from "@/features";
 export default function AuthRedirectClient() {
   const router = useRouter();
 
-  useEffect(() => {
-    if (!pb.authStore.isValid) {
-      router.replace("/login");
-    }
-  }, [router]);
+  // useEffect(() => {
+  //   if (!pb.authStore.isValid) {
+  //     router.replace("/login");
+  //   }
+  // }, [router]);
 
   return null;
 }

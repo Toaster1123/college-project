@@ -1,3 +1,9 @@
+import { PatientSearchForm } from "@/features";
+
 export default function Page() {
-  return <div className="">hello world</div>;
+  return (
+    <div className="">
+      <PatientSearchForm />
+    </div>
+  );
 }

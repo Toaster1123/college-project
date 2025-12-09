@@ -10,8 +10,8 @@ export const Header: FC = () => {
   const pathname = usePathname();
 
   return (
-    <header className="w-full bg-white dark:bg-gray-900 shadow-md">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <header className="w-full bg-white shadow-2xl z-50">
+      <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="shrink-0 font-bold text-xl text-gray-900 dark:text-white">
             Генекологическое дерево
