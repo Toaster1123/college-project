@@ -4,9 +4,9 @@ import { useLocationData } from "../hooks";
 
 interface Props {
   watchFields: {
-    country: number;
-    region: number;
-    city: number;
+    country: string | "";
+    region: string | "";
+    city: string | "";
   };
   updateForm: (name: "country" | "region" | "city", value: string) => void;
 }

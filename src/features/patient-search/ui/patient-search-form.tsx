@@ -77,9 +77,9 @@ export const PatientSearchForm = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <PatientSearchLocation
             watchFields={{
-              country: watchFields.country ?? "",
-              region: watchFields.region ?? "",
-              city: watchFields.city ?? "",
+              country: watchFields.country ? Number(watchFields.country) : 0,
+              region: watchFields.region ? Number(watchFields.region) : 0,
+              city: watchFields.city ? Number(watchFields.city) : 0,
             }}
             updateForm={(name, value) => setValue(name, value)}
           />
