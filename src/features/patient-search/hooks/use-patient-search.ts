@@ -20,7 +20,5 @@ export const usePatientSearch = () => {
     }
   };
 
-  const resetResults = () => setResults([]);
-
-  return { results, searchPatients, resetResults, loading };
+  return { results, searchPatients, loading };
 };

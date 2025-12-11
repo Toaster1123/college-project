@@ -2,14 +2,26 @@ import { useEffect, useState } from "react";
 import { City, Country, Region } from "../types";
 import { getCities, getCountries, getRegions } from "../api";
 
-export const useLocationData = (countryId: number, regionId: number) => {
+export const useLocationData = (
+  countryId: string | undefined,
+  regionId: string | undefined
+) => {
   const [countries, setCountries] = useState<Country[]>([]);
   const [regions, setRegions] = useState<Region[]>([]);
   const [cities, setCities] = useState<City[]>([]);
+  const [loading, setLoading] = useState<null | string>(null);
 
   useEffect(() => {
-    console.log("countrye");
-    getCountries().then((data: Country[]) => setCountries(data));
+    const fetch = async () => {
+      console.log("countrye");
+      setLoading("country");
+      setRegions([]);
+      setCities([]);
+      await getCountries().then((data: Country[]) => setCountries(data));
+      setLoading(null);
+    };
+
+    fetch();
   }, []);
 
   useEffect(() => {
@@ -17,11 +29,15 @@ export const useLocationData = (countryId: number, regionId: number) => {
 
     if (!countryId) return;
     console.log("region", countryId);
-
-    getRegions(countryId).then((data: Region[]) => {
-      setRegions(data);
-      setCities([]);
-    });
+    const fetch = async () => {
+      setLoading("region");
+      await getRegions(countryId).then((data: Region[]) => {
+        setRegions(data);
+        setCities([]);
+      });
+      setLoading(null);
+    };
+    fetch();
   }, [countryId]);
 
   useEffect(() => {
@@ -29,16 +45,18 @@ export const useLocationData = (countryId: number, regionId: number) => {
 
     if (!regionId) return;
     console.log("city");
-
-    getCities(regionId).then((data: City[]) => setCities(data));
+    const fetch = async () => {
+      setLoading("city");
+      await getCities(regionId).then((data: City[]) => setCities(data));
+      setLoading(null);
+    };
+    fetch();
   }, [regionId]);
-
-  const effectiveRegions = countryId ? regions : [];
-  const effectiveCities = regionId ? cities : [];
 
   return {
     countries,
-    regions: effectiveRegions,
-    cities: effectiveCities,
+    regions,
+    cities,
+    loading,
   };
 };

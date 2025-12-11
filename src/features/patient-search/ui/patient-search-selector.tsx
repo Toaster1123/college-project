@@ -9,9 +9,9 @@ import {
   SelectItem,
   Label,
   Spinner,
+  cn,
 } from "@/shared";
 import { PatientSearchFormValues } from "../model";
-import clsx from "clsx";
 
 interface Props {
   label: string;
@@ -19,7 +19,7 @@ interface Props {
   value?: string;
   onChange: (val: string) => void;
   options: { value: string; label: string }[];
-
+  disabled?: boolean;
   isLoading?: boolean;
 }
 
@@ -28,22 +28,23 @@ export const PatientSearchSelect: FC<Props> = ({
   value = "",
   onChange,
   options,
+  disabled = false,
   isLoading = false,
 }) => {
   return (
-    <div className="flex flex-col gap-1">
+    <div className="flex flex-col gap-2">
       <Label>{label}</Label>
 
       <div className="relative h-12">
         <div
-          className={clsx(
+          className={cn(
             "absolute inset-0 transition-opacity duration-300",
             isLoading ? "opacity-0 pointer-events-none" : "opacity-100"
           )}
         >
-          <Select value={value} onValueChange={onChange}>
+          <Select disabled={disabled} value={value} onValueChange={onChange}>
             <SelectTrigger className="w-full">
-              <SelectValue placeholder={label} />
+              <SelectValue placeholder={"Не выбрано"} />
             </SelectTrigger>
             <SelectContent>
               {options.map((opt) => (
@@ -56,7 +57,7 @@ export const PatientSearchSelect: FC<Props> = ({
         </div>
 
         <div
-          className={clsx(
+          className={cn(
             "absolute inset-0 flex items-center justify-center transition-opacity duration-300",
             isLoading ? "opacity-100" : "opacity-0 pointer-events-none"
           )}
