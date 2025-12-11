@@ -1,2 +1,2 @@
 export { searchApi } from "./search-patients";
-export * from "./location";
+export * from "../../patient-search-location/api/location";

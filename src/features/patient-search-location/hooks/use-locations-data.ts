@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
+"use client";
 import { City, Country, Region } from "../types";
 import { getCities, getCountries, getRegions } from "../api";
+import { useEffect, useState } from "react";
 
 export const useLocationData = (
   countryId: string | undefined,

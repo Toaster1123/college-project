@@ -4,7 +4,7 @@ export const patientSearchSchema = z.object({
   lastName: z.string().max(50).optional(),
   firstName: z.string().max(50).optional(),
   fatherName: z.string().max(50).optional(),
-  birthYear: z
+  birthDate: z
     .string()
     .regex(/^\d{4}$/, "Введите корректный год")
     .optional()

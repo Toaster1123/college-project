@@ -1,16 +1,16 @@
 import { Input, Label } from "@/shared";
 import { FC } from "react";
-import { PatientSearchFormValues } from "../model";
+import { PatientAddFormValues } from "../model";
 import { UseFormRegister } from "react-hook-form";
 
 interface Props {
   label: string;
-  name: keyof PatientSearchFormValues;
-  register: UseFormRegister<PatientSearchFormValues>;
+  name: keyof PatientAddFormValues;
+  register: UseFormRegister<PatientAddFormValues>;
   placeholder?: string;
 }
 
-export const PatientSearchInput: FC<Props> = ({
+export const PatientAddInput: FC<Props> = ({
   label,
   name,
   register,

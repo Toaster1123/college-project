@@ -5,3 +5,6 @@ export * from "./label";
 export * from "./sonner";
 export * from "./select";
 export * from "./spinner";
+export * from "./textarea";
+export * from "./popover";
+export * from "./calendar";

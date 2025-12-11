@@ -11,7 +11,7 @@ import {
   Spinner,
   cn,
 } from "@/shared";
-import { PatientSearchFormValues } from "../model";
+import { PatientSearchFormValues } from "../../../features/patient-search/model";
 
 interface Props {
   label: string;
