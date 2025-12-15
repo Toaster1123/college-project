@@ -56,7 +56,7 @@ export const PatientSearchLocation: FC<Props> = ({
           value={watchFields.city}
           onChange={(val) => updateForm("city", val)}
           options={cities.map((r) => ({
-            value: String(r.externalId),
+            value: r.externalId,
             label: r.name,
           }))}
           isLoading={loading === "city"}

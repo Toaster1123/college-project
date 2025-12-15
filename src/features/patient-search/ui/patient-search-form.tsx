@@ -17,7 +17,7 @@ export const PatientSearchForm = () => {
         lastName: "",
         firstName: "",
         fatherName: "",
-        birthYear: "",
+        birthday: "",
         gender: "",
         country: "",
         region: "",
@@ -31,7 +31,7 @@ export const PatientSearchForm = () => {
   };
 
   return (
-    <div className="max-w-5xl mx-auto mt-8 space-y-8">
+    <div className="max-w-7xl mx-auto my-8 space-y-8">
       <section className="bg-white dark:bg-gray-900 shadow-lg rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden">
         <div className="px-6 py-5 border-b border-gray-100 dark:border-gray-800">
           <h1 className="text-2xl font-bold text-gray-900 dark:text-white">

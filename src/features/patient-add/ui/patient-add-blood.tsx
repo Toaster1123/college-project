@@ -11,14 +11,14 @@ interface Props {
 
 export const PatientAddBlood: FC<Props> = ({ register, errors }) => {
   return (
-    <section className="bg-white dark:bg-gray-900 shadow-lg rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden">
-      <div className="px-6 py-5 border-b border-gray-100 dark:border-gray-800">
+    <section>
+      <div className="">
         <FormTitle Icon={Clipboard} label="Клинические обследования" />
       </div>
 
-      <div className="px-6 pb-8 space-y-6">
+      <div className="pb-8 space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
+          <div className="flex flex-col gap-2">
             <Label htmlFor="stage">Клиническая стадия</Label>
             <Input
               id="stage"
@@ -27,13 +27,13 @@ export const PatientAddBlood: FC<Props> = ({ register, errors }) => {
               aria-invalid={!!errors.stage}
             />
             {errors.stage && (
-              <p className="mt-1 text-sm text-red-500">
+              <p className="text-sm text-red-500">
                 {errors.stage.message as string}
               </p>
             )}
           </div>
 
-          <div>
+          <div className="flex flex-col gap-2">
             <Label htmlFor="bloodDate">Дата анализа крови</Label>
             <Input
               id="bloodDate"
@@ -42,7 +42,7 @@ export const PatientAddBlood: FC<Props> = ({ register, errors }) => {
               aria-invalid={!!errors.bloodDate}
             />
             {errors.bloodDate && (
-              <p className="mt-1 text-sm text-red-500">
+              <p className="text-sm text-red-500">
                 {errors.bloodDate.message as string}
               </p>
             )}
@@ -50,7 +50,7 @@ export const PatientAddBlood: FC<Props> = ({ register, errors }) => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
+          <div className="flex flex-col gap-2">
             <Label htmlFor="mutation">Мутация</Label>
             <Textarea
               id="mutation"
@@ -60,13 +60,13 @@ export const PatientAddBlood: FC<Props> = ({ register, errors }) => {
               rows={4}
             />
             {errors.mutation && (
-              <p className="mt-1 text-sm text-red-500">
+              <p className="text-sm text-red-500">
                 {errors.mutation.message as string}
               </p>
             )}
           </div>
 
-          <div>
+          <div className="flex flex-col gap-2">
             <Label htmlFor="crio">Криосохранение</Label>
             <Textarea
               id="crio"
@@ -76,14 +76,14 @@ export const PatientAddBlood: FC<Props> = ({ register, errors }) => {
               rows={4}
             />
             {errors.crio && (
-              <p className="mt-1 text-sm text-red-500">
+              <p className="text-sm text-red-500">
                 {errors.crio.message as string}
               </p>
             )}
           </div>
         </div>
 
-        <div>
+        <div className="flex flex-col gap-2">
           <Label htmlFor="dateCrio">Дата криосохранения</Label>
           <Input
             id="dateCrio"
@@ -92,7 +92,7 @@ export const PatientAddBlood: FC<Props> = ({ register, errors }) => {
             aria-invalid={!!errors.dateCrio}
           />
           {errors.dateCrio && (
-            <p className="mt-1 text-sm text-red-500">
+            <p className="text-sm text-red-500">
               {errors.dateCrio.message as string}
             </p>
           )}

@@ -1,7 +1,7 @@
 export interface PatientSearch {
   fullName: string;
-  gender: "М" | "Ж";
-  birthYear: number;
+  gender: "муж" | "жен";
+  birthYear: string;
   city: string;
   region: string;
 }

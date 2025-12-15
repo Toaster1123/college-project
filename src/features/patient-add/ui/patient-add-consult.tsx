@@ -1,4 +1,3 @@
-// features/patient/ui/patient-add-consult.tsx
 import { FormTitle, Input, Label, Textarea } from "@/shared";
 import { PenLine } from "lucide-react";
 import { FC } from "react";
@@ -12,13 +11,13 @@ interface Props {
 
 export const PatientAddConsult: FC<Props> = ({ register, errors }) => {
   return (
-    <section className="bg-white dark:bg-gray-900 shadow-lg rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden">
-      <div className="px-6 py-5 border-b border-gray-100 dark:border-gray-800">
+    <section>
+      <div>
         <FormTitle Icon={PenLine} label="Консультации врача" />
       </div>
 
-      <div className="px-6 py-8 space-y-6">
-        <div>
+      <div className="py-8 space-y-6">
+        <div className="flex flex-col gap-2">
           <Label htmlFor="doctorConsultation">Консультация доктора</Label>
           <Textarea
             id="doctorConsultation"
@@ -28,13 +27,13 @@ export const PatientAddConsult: FC<Props> = ({ register, errors }) => {
             rows={4}
           />
           {errors.doctorConsultation && (
-            <p className="mt-1 text-sm text-red-500">
+            <p className="text-sm text-red-500">
               {errors.doctorConsultation.message as string}
             </p>
           )}
         </div>
 
-        <div>
+        <div className="flex flex-col gap-2">
           <Label htmlFor="doctorConsultationDate">
             Дата консультации врача
           </Label>
@@ -45,13 +44,13 @@ export const PatientAddConsult: FC<Props> = ({ register, errors }) => {
             aria-invalid={!!errors.doctorConsultationDate}
           />
           {errors.doctorConsultationDate && (
-            <p className="mt-1 text-sm text-red-500">
+            <p className="text-sm text-red-500">
               {errors.doctorConsultationDate.message as string}
             </p>
           )}
         </div>
 
-        <div>
+        <div className="flex flex-col gap-2">
           <Label htmlFor="geneticistConsultation">Консультация генетика</Label>
           <Textarea
             id="geneticistConsultation"
@@ -61,13 +60,13 @@ export const PatientAddConsult: FC<Props> = ({ register, errors }) => {
             rows={4}
           />
           {errors.geneticistConsultation && (
-            <p className="mt-1 text-sm text-red-500">
+            <p className="text-sm text-red-500">
               {errors.geneticistConsultation.message as string}
             </p>
           )}
         </div>
 
-        <div>
+        <div className="flex flex-col gap-2">
           <Label htmlFor="geneticistConsultationDate">
             Дата консультации генетика
           </Label>
@@ -78,13 +77,13 @@ export const PatientAddConsult: FC<Props> = ({ register, errors }) => {
             aria-invalid={!!errors.geneticistConsultationDate}
           />
           {errors.geneticistConsultationDate && (
-            <p className="mt-1 text-sm text-red-500">
+            <p className="text-sm text-red-500">
               {errors.geneticistConsultationDate.message as string}
             </p>
           )}
         </div>
 
-        <div>
+        <div className="flex flex-col gap-2">
           <Label htmlFor="recommendations">Рекомендации</Label>
           <Textarea
             id="recommendations"
@@ -94,7 +93,7 @@ export const PatientAddConsult: FC<Props> = ({ register, errors }) => {
             rows={4}
           />
           {errors.recommendations && (
-            <p className="mt-1 text-sm text-red-500">
+            <p className="text-sm text-red-500">
               {errors.recommendations.message as string}
             </p>
           )}

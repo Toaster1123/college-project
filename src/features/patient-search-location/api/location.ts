@@ -7,7 +7,6 @@ pb.autoCancellation(false);
 export const getCountries = async (): Promise<Country[]> => {
   try {
     const data = await pb.collection("countries").getFullList<Country>();
-    console.log("datadata", data);
     return data;
   } catch (err) {
     console.error("Ошибка при получении стран:", err);

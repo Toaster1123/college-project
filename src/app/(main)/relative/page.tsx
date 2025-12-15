@@ -1,3 +1,9 @@
+import { FamilyTreeWidget } from "@/features";
+
 export default function Page() {
-  return <div className="">hello world</div>;
+  return (
+    <div className="">
+      <FamilyTreeWidget />
+    </div>
+  );
 }

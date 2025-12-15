@@ -6,11 +6,11 @@ export interface Country {
 export interface Region {
   externalId: number;
   name: string;
-  externalCountryId: number;
+  countryExternalId: number;
 }
 
 export interface City {
   externalId: number;
   name: string;
-  externalRegionId: number;
+  regionExternalId: number;
 }

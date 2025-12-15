@@ -14,7 +14,6 @@ export const useLocationData = (
 
   useEffect(() => {
     const fetch = async () => {
-      console.log("countrye");
       setLoading("country");
       setRegions([]);
       setCities([]);
@@ -26,10 +25,7 @@ export const useLocationData = (
   }, []);
 
   useEffect(() => {
-    console.log("region without id");
-
     if (!countryId) return;
-    console.log("region", countryId);
     const fetch = async () => {
       setLoading("region");
       await getRegions(countryId).then((data: Region[]) => {
@@ -42,10 +38,7 @@ export const useLocationData = (
   }, [countryId]);
 
   useEffect(() => {
-    console.log("city without id");
-
     if (!regionId) return;
-    console.log("city");
     const fetch = async () => {
       setLoading("city");
       await getCities(regionId).then((data: City[]) => setCities(data));

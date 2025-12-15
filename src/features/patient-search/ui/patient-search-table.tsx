@@ -96,7 +96,9 @@ export const PatientSearchTable: FC<Props> = ({ results, loading = false }) => {
                   {patient.gender}
                 </td>
                 <td className="px-6 py-4 text-gray-600 dark:text-gray-400">
-                  {patient.birthYear}
+                  {patient.birthYear
+                    ? patient.birthYear.split("-").reverse().join(".")
+                    : ""}
                 </td>
                 <td className="px-6 py-4 text-gray-600 dark:text-gray-400">
                   {patient.city}, {patient.region}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "../globals.css";
 
 import { Header } from "@/widgets";
+import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,6 +18,7 @@ export default function RootLayout({
     <div>
       <Header />
       {children}
+      <Toaster position="top-center" />
     </div>
   );
 }

@@ -28,7 +28,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
-    "**/*.mts"
+    "**/*.mts",
+    "src/shared/lib/mock-patient/generate-mock-patients-api.js"
   ],
   "exclude": ["node_modules"]
 }

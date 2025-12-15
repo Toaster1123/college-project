@@ -1,9 +1,10 @@
-// features/patient/api/addPatient.ts
 import PocketBase from "pocketbase";
 import { PatientAddFormValues } from "../model";
 
 const pb = new PocketBase("http://127.0.0.1:8090");
 pb.autoCancellation(false);
+
+await pb.admins.authWithPassword("admin@mail.com", "00000000");
 
 export const addPatientApi = async (data: PatientAddFormValues) => {
   try {
@@ -11,12 +12,11 @@ export const addPatientApi = async (data: PatientAddFormValues) => {
       firstName: data.firstName,
       lastName: data.lastName,
       fatherName: data.fatherName,
-      birthday: data.birthDate,
-      sex: data.gender,
+      birthday: data.birthday,
+      gender: data.gender,
       city: data.city,
       country: data.country,
       region: data.region,
-      seek: data.seek,
       stage: data.stage,
       mutation: data.mutation,
       dateBlood: data.bloodDate,
