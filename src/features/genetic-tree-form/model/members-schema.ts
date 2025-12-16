@@ -1,5 +1,5 @@
+import { membersValues, RelationType } from "@/shared";
 import { z } from "zod";
-import { membersValues, RelationType } from "../constants";
 const relationNames = membersValues.map((m) => m.name);
 export const MembersSchema = z.object({
   relation: z

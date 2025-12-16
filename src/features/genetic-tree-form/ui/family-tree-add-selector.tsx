@@ -1,5 +1,6 @@
 import {
   Label,
+  membersValues,
   Select,
   SelectContent,
   SelectItem,
@@ -7,7 +8,6 @@ import {
   SelectValue,
 } from "@/shared";
 import { FC } from "react";
-import { membersValues } from "../constants";
 
 interface Props {
   value: string;

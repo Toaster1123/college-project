@@ -39,3 +39,16 @@ export const drawCross = (
   ctx.lineTo(x - SIZE, y + SIZE);
   ctx.stroke();
 };
+
+export const drawText = (
+  ctx: CanvasRenderingContext2D,
+  text: string,
+  x: number,
+  y: number
+) => {
+  ctx.fillStyle = "#000";
+  ctx.font = "14px Arial";
+  ctx.textAlign = "center";
+  ctx.textBaseline = "top";
+  ctx.fillText(text, x, y + SIZE + 4);
+};

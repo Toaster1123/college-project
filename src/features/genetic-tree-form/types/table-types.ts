@@ -1,4 +1,4 @@
-import { RelationType } from "../constants";
+import { RelationType } from "@/shared";
 
 export interface TableFormValues {
   relation: RelationType;

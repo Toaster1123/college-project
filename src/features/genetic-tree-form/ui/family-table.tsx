@@ -6,7 +6,6 @@ import { FamilyTableBodyItem } from "./family-table-body-item";
 
 export const FamilyMembersTable: FC = () => {
   const { members, removeMember } = useFamilyStore();
-  // console.log(members);
   members.forEach((item) => console.log(item.relation, item.parents));
   console.log(members);
 
